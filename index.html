@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Surat Untuk Kamu</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('https://i.ibb.co/9bZ5Vz0/galaxy-wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+  }
+
+  .foto {
+    margin-top: 70px;
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 100, 200, 0.9);
+    animation: glow 2.3s infinite alternate ease-in-out;
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 10px #ff5ae6; }
+    100% { box-shadow: 0 0 30px #ffb3f0; }
+  }
+
+  .pesan {
+    margin-top: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    animation: kedip 1.2s infinite ease-in-out;
+ 
+  }
+
+  .pesan {
+    margin-top: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    animation: kedip 1.2s infinite ease-in-out;
+  }
+
+  @keyframes kedip {
+    0% { color: #ff7de8; }
+    50% { color: white; }
+    100% { color: #ff7de8; }
+  }
+
+  .heart {
+    position: fixed;
+    top: -10px;
+    color: pink;
+    font-size: 20px;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+  }
+</style>
+</head>
+
+<body>
+
+<img src="https://c.top4top.io/p_3620yeyuc0.jpg" class="foto">
+
+<div class="pesan">kamu adalah segalanya bagiku</div>
+
+<div class="pesan">memiliki mu adalah hal terindah yang perna ada kau lah wanita yang menerima ku apa ada nya #vina azhara putri💍</div>
+<div id="pertanyaan" style="margin-top:40px; font-size:26px; font-weight:bold;">
+  apa kamu suka aku?
+</div>
+
+<div style="margin-top:20px;">
+  <button onclick="jawab('ya')" style="
+    padding:10px 25px; 
+    font-size:20px; 
+    border:none; 
+    border-radius:8px; 
+    cursor:pointer;
+    background:#ff66cc;
+    color:white;
+    font-weight:bold;
+  ">Ya</button>
+
+  <button onclick="jawab('tidak')" style="
+    padding:10px 25px; 
+    font-size:20px; 
+    border:none; 
+    border-radius:8px; 
+    cursor:pointer;
+    background:#999;
+    color:white;
+    font-weight:bold;
+    margin-left:15px;
+  ">Tidak</button>
+</div>
+
+<div id="hasil" style="margin-top:25px; font-size:24px; font-weight:bold;"></div>
+
+<script>
+  function jawab(pilihan) {
+    const hasil = document.getElementById("hasil");
+
+    if (pilihan === "tidak") {
+      hasil.innerHTML = "yaudah aku terima keputusan mu";
+      hasil.style.color = "white";
+    } else if (pilihan === "ya") {
+      hasil.innerHTML = "yey :>";
+      hasil.style.color = "#ffb3f0";
+      setTimeout(() => {
+        window.location.href = "https://www.facebook.com/whanx199";
+      }, 1500);
+    }
+  }
+
+  function buatHati() {
+    const hati = document.createElement("div");
+    hati.classList.add("heart");
+    hati.innerHTML = "❤";
+    hati.style.left = Math.random() * 100 + "vw";
+    hati.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(hati);
+    setTimeout(() => hati.remove(), 6000);
+  }
+  setInterval(buatHati, 300);
+</script>
+
+<div id="musicPlayer" style="display:none;"></div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('musicPlayer', {
+      height: '0',
+      width: '0',
+      videoId: 'd_HNBeNknwg',
+      playerVars: {
+        autoplay: 1,
+        loop: 1,
+        playlist: 'd_HNBeNknwg',
+        controls: 0,
+        showinfo: 0,
+        modestbranding: 1
+      },
+      events: { 'onReady': onPlayerReady }
+    });
+  }
+
+  function onPlayerReady(event) {
+    event.target.mute();
+    event.target.playVideo();
+    setTimeout(() => {
+      event.target.unMute();
+      event.target.setVolume(70);
+    }, 1200);
+  }
+</script>
+
+</body>
+</html>
